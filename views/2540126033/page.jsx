@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import Link from 'next/link';
 
 function Index() {
 
@@ -9,40 +10,37 @@ function Index() {
 
 const [count, setCount] = useState(0);
 
-  // 1. Use the useEffect hook
   useEffect(() => {
-    // 2. This code runs AFTER the component renders (initially and on every update).
-    //    It is a "side effect" because it interacts with the world outside of React (the browser API).
     document.title = `You clicked ${count} times`;
-  }, [count]); // 3. Dependency Array: This effect only re-runs if 'count' changes.
+  }, [count]);
 
 
   const inputRef = useRef(null);
 
   const handleClick = () => {
-    // 2. Access the current DOM element through the .current property
-    // and call a method on it (like .focus()).
     inputRef.current.focus();
   };
 
   const findFactorial = (n) => {
-  console.log('Calculating factorial...'); // See when this runs!
+  console.log('Calculating factorial...');
   let result = 1;
   for (let i = 1; i <= n; i++) {
-    // Simulate a long calculation
     for (let j = 0; j < 10000000; j++) {} 
     result *= i;
   }
   return result;
 };
 
-const [number, setNumber] = useState(5);
+const goToJason = () => {
+
+}
+
+  const [number, setNumber] = useState(5);
   const [toggle, setToggle] = useState(false);
 
-  // 1. Memoize the expensive result
   const factorialResult = useMemo(() => {
     return findFactorial(number);
-  }, [number]); // 2. Dependency Array: Only re-run if 'number' changes.
+  }, [number]);
 
   return (
     <>
@@ -94,8 +92,14 @@ const [number, setNumber] = useState(5);
       <button onClick={() => setToggle(!toggle)}>
         Toggle Component
       </button>
-    </div>
 
+      <hr />
+      <Link href={'./2540126033/jason'}>
+      <button>
+        Go to Page Fetch
+      </button>
+      </Link>
+    </div>
     </>
   )
 }
