@@ -31,10 +31,6 @@ const [count, setCount] = useState(0);
   return result;
 };
 
-const goToJason = () => {
-
-}
-
   const [number, setNumber] = useState(5);
   const [toggle, setToggle] = useState(false);
 
@@ -45,12 +41,6 @@ const goToJason = () => {
   return (
     <>
     <div className='base bg-blue-300 dark:bg-gray-800 pb-10 vw-100 transition-colors duration-500'>
-      <div className=" profile flex flex-row items-center bg-blue-600">
-        <div className='personInfo m-36'>
-          <h1 id="name" className='text-white font-weight-800'>{nama}</h1>
-          <h2 id="email" className='italic text-white'>{nim}</h2>
-        </div>
-      </div>
 
         <div className='content ml-45 mr-10 mt-5'>
           <div>
